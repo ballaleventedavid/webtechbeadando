@@ -1,0 +1,136 @@
+
+body {
+    background-color: #f8f9fa; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+/* navbar stílusai */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+.navbar-brand {
+    font-weight: bold; 
+}
+
+/* Autó stílusai */
+.auto-kartya {
+    transition: transform 0.2s; 
+    border: none; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+.auto-kartya:hover {
+    transform: translateY(-5px); 
+}
+
+.auto-kartya .card-body {
+    padding: 1.5rem; 
+}
+
+.auto-kartya .card-title {
+    color: #333; 
+    margin-bottom: 1rem; 
+}
+
+.auto-kartya .card-text {
+    color: #666; 
+    margin-bottom: 1.5rem; 
+}
+
+/* Gombok stílusai */
+.btn {
+    padding: 0.5rem 1rem; 
+    font-weight: 500; 
+    border-radius: 0.25rem; 
+}
+
+.btn-primary {
+    background-color: #007bff; 
+    border-color: #007bff; 
+}
+
+.btn-warning {
+    background-color: #ffc107; 
+    border-color: #ffc107; 
+    color: #000; 
+}
+
+.btn-danger {
+    background-color: #dc3545; 
+    border-color: #dc3545; 
+}
+
+/* Modal stílusai */
+.modal-content {
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.modal-header {
+    background-color: #f8f9fa; 
+    border-bottom: 1px solid #dee2e6; 
+}
+
+.modal-title {
+    color: #333; 
+    font-weight: 600; 
+}
+
+/* Form stílusai */
+.form-label {
+    font-weight: 500; 
+    color: #495057; 
+}
+
+.form-control {
+    border-radius: 0.25rem; 
+    border: 1px solid #ced4da; 
+    padding: 0.5rem 0.75rem; 
+}
+
+.form-control:focus {
+    border-color: #80bdff; 
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25); 
+}
+
+/* Betöltés stílusa */
+.spinner-border {
+    width: 3rem; 
+    height: 3rem; 
+    color: #007bff; 
+}
+
+/* Figyelmeztető üzenetstílusai */
+.alert {
+    border-radius: 0.25rem; 
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+}
+
+.alert-danger {
+    background-color: #f8d7da; 
+    border-color: #f5c6cb; 
+    color: #721c24; 
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb; 
+    color: #0c5460; 
+}
+
+@media (max-width: 768px) {
+    .auto-kartya .card-img-top {
+        height: 150px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+} 

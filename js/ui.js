@@ -10,15 +10,34 @@ class AutoUI {
         `;
     }
 
-    static hibaMegjelenitese(uzenet) {
-        const autoLista = document.getElementById('car-list');
-        autoLista.innerHTML = `
-            <div class="col-12">
-                <div class="alert alert-danger" role="alert">
-                    ${uzenet}
+    static hibaMegjelenitese(uzenet, modal = false) {
+        if (modal) {
+            const modalBody = document.querySelector('#carFormModal .modal-body');
+            const hibaUzenet = document.createElement('div');
+            hibaUzenet.className = 'alert alert-danger mt-3';
+            hibaUzenet.role = 'alert';
+            hibaUzenet.textContent = uzenet;
+            
+            // Először töröljük a korábbi hibaüzeneteket
+            const regiHibak = modalBody.querySelectorAll('.alert-danger');
+            regiHibak.forEach(hiba => hiba.remove());
+            
+            // Hozzáadjuk az új hibaüzenetet
+            modalBody.appendChild(hibaUzenet);
+        } else {
+            const autoLista = document.getElementById('car-list');
+            autoLista.innerHTML = `
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card car-card h-100">
+                        <div class="card-body">
+                            <div class="alert alert-danger" role="alert">
+                                ${uzenet}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
+        }
     }
 
     static autoListaMegjelenitese(autok) {
@@ -113,7 +132,7 @@ class AutoUI {
                 document.getElementById('day-of-commission').value = auto.dayOfCommission;
                 document.getElementById('electric').checked = auto.electric;
             } catch (hiba) {
-                this.hibaMegjelenitese(hiba.message);
+                this.hibaMegjelenitese(hiba.message, true);
                 return;
             }
         } else {
